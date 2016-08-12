@@ -1,0 +1,2 @@
+module BusinessSummaryHelper
+end
