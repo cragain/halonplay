@@ -12,8 +12,6 @@ class BusinessSummaryController < ApplicationController
   def fixed_assets
   end
   
-  def initialize_business_summary
-    @business_summary = BusinessSummary.new
-  end
+  
 
 end

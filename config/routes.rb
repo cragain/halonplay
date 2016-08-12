@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
  
+  
+  
  root 'dashboard#index'
  
- 
+ resources :users do
+   resources :businesses
+ end
  resources :return_wizard
+ 
  
  
  

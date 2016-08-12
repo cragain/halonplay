@@ -96,6 +96,10 @@
   text-decoration: none;
 }
 
+.contact-label {
+  margin-top: 5px;
+}
+
 
 @media (max-width: 991px) {
   .nav-div {
