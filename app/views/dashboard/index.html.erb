@@ -1,3 +1,4 @@
+<% user_signed_in? %>
 <div class="row">
   <div class="content-div">
     <div class="well well-sm">
@@ -6,12 +7,21 @@
   </div>
 </div>
 <div class="row">
-  <h3 class="text-center">Welcome To Halon Tax</h3>
-  <h4 class="text-center">When you are ready to begin your tax return click this button</h4>
-  <h5 class="text-center">Halon will guide you every step of the way</h5>
-  <h6 class="text-center">This is going to be alot of fun!</h6>
-  <div class="text-center">  
-    <a href="return_wizard/get_name.html" class="btn btn-primary btn-lg" >Begin Tax Return</a>
+  <div class="content-div">
+    <table class="table">
+      <thead>  
+        <tr>
+          <th>Business Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <% User.find(current_user.id).businesses.each do |biz| %>
+          <td><%= biz.business_name %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
-

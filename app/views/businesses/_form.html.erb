@@ -1,17 +1,18 @@
 <%= simple_form_for [@user, @business] do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :business_name %>
-    <%= f.input :business_start %>
-    <%= f.input :business_street_1 %>
-    <%= f.input :business_street_2 %>
-    <%= f.input :business_city %>
-    <%= f.input :business_state %>
-    <%= f.input :business_zip %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="content-div">
+    <div class="form-inputs">
+      <%= f.input :business_name %>
+      <%= f.input :business_start %>
+      <%= f.input :business_street_1 %>
+      <%= f.input :business_street_2 %>
+      <%= f.input :business_city %>
+      <%= f.input :business_state %>
+      <%= f.input :business_zip %>
+    </div>
+  
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
   </div>
 <% end %>
