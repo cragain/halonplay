@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<%= simple_form_for Business.find(1) do |f| %>
+<%= simple_form_for [@user, @business] do |f| %>
 <%= f.input :business_name %>
 <%= f.button :submit %>
 <% end %>

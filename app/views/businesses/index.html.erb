@@ -1,18 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Businesses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="content-div">
+  <div class="well well-sm">
+    <h2 class="text-center">Business Entities</h2>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Business Name</th>
+        <th>Street Address</th>
+        <th>Street Address #2</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+      </tr>
+    </thead>
 
   <tbody>
     <% @businesses.each do |business| %>
       <tr>
         <td><%= business.business_name %></td>
+        <td><%= business.business_street_1 %></td>
+        <td><%= business.business_street_2 %></td>
+        <td><%= business.business_city %></td>
+        <td><%= business.business_state %></td>
+        <td><%= business.business_zip %></td>
         <td><%= link_to 'Show', user_business_path(@user, business) %></td>
         <td><%= link_to 'Edit', edit_user_business_path(@user, business) %></td>
         <td><%= link_to 'Destroy', [@user, business], method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,3 +36,6 @@
 <br>
 
 <%= link_to 'New Business', new_user_business_path %>
+
+</div>
+
