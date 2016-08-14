@@ -2,14 +2,23 @@ Rails.application.routes.draw do
  
   
   
-  devise_for :users
- root 'dashboard#index'
+ devise_for :users
+
  
  resources :users do
    resources :businesses
  end
+ 
+ resources :connect do
+  collection do
+    get :authenticate
+    get :oauth_callback
+  end
+ 
+  
+ end
 
- resources :business_summary
+root 'dashboard#index'
  
  
  
