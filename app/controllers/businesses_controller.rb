@@ -48,7 +48,7 @@ class BusinessesController < ApplicationController
     @business = @user.businesses.find(params[:id])
     respond_to do |format|
       if @business.update(business_params)
-        format.html { redirect_to [@user, @business], notice: 'Business was successfully updated.' }
+        format.html { redirect_to root_path(@user), notice: 'Business was successfully updated.' }
         format.json { render :show, status: :ok, location: @business }
       else
         format.html { render :edit }

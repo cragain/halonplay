@@ -8,16 +8,13 @@ Rails.application.routes.draw do
  resources :users do
    resources :businesses
  end
- resources :return_wizard
+
+ resources :business_summary
  
  
  
  
  
- get 'business_summary/contact_info'
- get 'business_summary/ein'
- get 'business_summary/schedule_b'
- get 'business_summary/fixed_assets'
  
  
  
