@@ -4,6 +4,7 @@
     <div class="well well-sm">
       <h2 class="text-center">Dashboard</h2>
     </div>
+    <%= link_to 'New Business', new_user_business_path(current_user), class: "btn btn-default pull-right" %>
   </div>
 </div>
 <div class="row">
@@ -12,16 +13,24 @@
       <thead>  
         <tr>
           <th>Business Name</th>
-          <th></th>
+          <th>EIN</th>
+          <th>Business Type</th>
         </tr>
       </thead>
       <tbody>
         <tr>
         <% User.find(current_user.id).businesses.each do |biz| %>
-          <td><%= biz.business_name %></td>
+          <td><%= link_to biz.business_name, edit_user_business_path(current_user, biz) %></td>
+          <td><%= biz.ein %></td>
+          <td><%= biz.biz_type %></td>
+          <td><%= link_to "Edit", edit_user_business_path(current_user, biz), class: "btn btn-success" %></td>
+          <td><%= link_to "Delete", [current_user, biz], class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %></td>
+          <td><%= link_to "Start Return", business_summary_contact_info_path(current_user, biz), class: "btn btn-primary" %></td>
+          
         </tr>
         <% end %>
       </tbody>
     </table>
+    
   </div>
 </div>

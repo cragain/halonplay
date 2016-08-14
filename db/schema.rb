@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813130329) do
+ActiveRecord::Schema.define(version: 20160814125756) do
 
   create_table "business_summaries", force: :cascade do |t|
     t.datetime "created_at",     null: false
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20160813130329) do
     t.string   "business_state"
     t.string   "business_zip"
     t.integer  "user_id"
+    t.string   "ein"
+    t.string   "biz_type"
+    t.string   "bac"
+    t.string   "method"
+    t.string   "activity"
+    t.string   "product"
+    t.string   "schb3"
+    t.string   "schb4a"
+    t.string   "schb4b"
+    t.string   "schb10a"
+    t.string   "schb10b"
   end
 
   create_table "users", force: :cascade do |t|

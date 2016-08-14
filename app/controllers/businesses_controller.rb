@@ -29,11 +29,11 @@ class BusinessesController < ApplicationController
   # POST /businesses
   # POST /businesses.json
   def create
-    @business = @user.businesses.new(params[:id])
+    @business = @user.businesses.build(business_params)
 
     respond_to do |format|
       if @business.save
-        format.html { redirect_to [@user, @business], notice: 'Business was successfully created.' }
+        format.html { redirect_to root_path(@user), notice: 'Business was successfully created.' }
         format.json { render :show, status: :created, location: @business }
       else
         format.html { render :new }
@@ -64,7 +64,7 @@ class BusinessesController < ApplicationController
     
     @business.destroy
     respond_to do |format|
-      format.html { redirect_to user_businesses_path(@user), notice: 'Business was successfully destroyed.' }
+      format.html { redirect_to root_path(@user), notice: 'Business was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,7 +73,7 @@ class BusinessesController < ApplicationController
    
     # Never trust parameters from the scary internet, only allow the white list through.
    def business_params
-    params.require(:business).permit(:business_name, :business_start, :business_street_1, :business_street_2, :business_city, :business_state, :business_zip)
+    params.require(:business).permit(:business_name, :business_start, :business_street_1, :business_street_2, :business_city, :business_state, :business_zip, :ein, :biz_type, :bac, :method, :activity, :product, :schb3, :schb4a, :schb4b, :schb10a, :schb10b)
    end
     
     def load_user
