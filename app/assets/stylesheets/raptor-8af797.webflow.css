@@ -159,6 +159,10 @@
   font-size: 18px;
 }
 
+.well .well-purple {
+  background-color: #7227a3
+}
+
 @media all and (min-width: 720px) {
   .c-tabs-nav__link i {
     margin-bottom: 12px;
