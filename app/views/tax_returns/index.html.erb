@@ -6,6 +6,9 @@
     <%= link_to 'New Return', new_user_tax_return_path(current_user), class: "btn btn-default pull-right" %>
   </div>
 </div>
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
 
 
 <div class="content-div">
@@ -13,7 +16,7 @@
     <thead>
       <tr>
         <th>Return Name</th>
-        <th>Return ID</th>
+        <th>Business EIN</th>
         <th>Business ID</th>
       </tr>
     </thead>
@@ -21,8 +24,9 @@
       <% @tax_returns.each do |taxrtn| %>
       <tr>
         <td><%= link_to Business.find(taxrtn.business_id).business_name, user_tax_return_path(@user, taxrtn.id)  %> </td>
-        <td><%= taxrtn.id %></td>
+        <td><%= Business.find(taxrtn.business_id).ein %></td>
         <td><%= taxrtn.business_id %></td>
+        <td><%= link_to 'Delete Return', [@user, taxrtn], class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
     </tbody>

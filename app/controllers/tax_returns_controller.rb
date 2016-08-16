@@ -41,6 +41,16 @@ class TaxReturnsController < ApplicationController
     end
   end
   
+  def destroy
+  @tax_return = @user.tax_returns.find(params[:id])
+  
+  @tax_return.destroy
+    respond_to do |format|
+      format.html { redirect_to user_tax_returns_path(@user), notice: 'Tax Return was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+  
   
   private
   
