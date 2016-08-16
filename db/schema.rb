@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814125756) do
+ActiveRecord::Schema.define(version: 20160815215923) do
 
   create_table "business_summaries", force: :cascade do |t|
     t.datetime "created_at",     null: false
@@ -43,6 +43,29 @@ ActiveRecord::Schema.define(version: 20160814125756) do
     t.string   "schb4b"
     t.string   "schb10a"
     t.string   "schb10b"
+    t.integer  "gross_receipts"
+    t.integer  "returns"
+    t.integer  "cost_goods"
+    t.integer  "other_income"
+    t.integer  "off_comp"
+    t.integer  "salaries"
+    t.integer  "repairs"
+    t.integer  "bad_debt"
+    t.integer  "rents"
+    t.integer  "taxes"
+    t.integer  "interest"
+    t.integer  "depreciation"
+    t.integer  "advertising"
+    t.integer  "pension"
+    t.integer  "emp_ben"
+    t.integer  "other_deductions"
+  end
+
+  create_table "tax_returns", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "business_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

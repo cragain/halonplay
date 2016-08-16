@@ -132,6 +132,8 @@
 	    addReady(module);
 	  }
 	}
+	
+	
 
 	function addReady(module) {
 	  // If domready has already happened, run ready method

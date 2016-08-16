@@ -1,0 +1,7 @@
+<%= simple_form_for [@user, @tax_return] do |f| %>
+<%= f.error_notification %>
+
+<%= f.association :business, collection: Business.where(user_id: @user), label_method: :business_name %>
+
+<%= f.button :submit %>
+<% end %>

@@ -15,6 +15,7 @@ class BusinessesController < ApplicationController
   # GET /businesses/1.json
   def show
     @business = @user.businesses.find(params[:id])
+    
   end
 
   # GET /businesses/new
@@ -48,7 +49,7 @@ class BusinessesController < ApplicationController
     @business = @user.businesses.find(params[:id])
     respond_to do |format|
       if @business.update(business_params)
-        format.html { redirect_to root_path(@user), notice: 'Business was successfully updated.' }
+        format.html { redirect_to edit_user_business_path(@user, @business), notice: 'Business was successfully updated.' }
         format.json { render :show, status: :ok, location: @business }
       else
         format.html { render :edit }
@@ -73,7 +74,7 @@ class BusinessesController < ApplicationController
    
     # Never trust parameters from the scary internet, only allow the white list through.
    def business_params
-    params.require(:business).permit(:business_name, :business_start, :business_street_1, :business_street_2, :business_city, :business_state, :business_zip, :ein, :biz_type, :bac, :method, :activity, :product, :schb3, :schb4a, :schb4b, :schb10a, :schb10b)
+    params.require(:business).permit(:business_name, :business_start, :business_street_1, :business_street_2, :business_city, :business_state, :business_zip, :ein, :biz_type, :bac, :method, :activity, :product, :schb3, :schb4a, :schb4b, :schb10a, :schb10b, :gross_receipts, :returns, :cost_goods, :other_income, :off_comp, :salaries, :repairs, :bad_debt, :rents, :taxes, :interest, :depreciations, :advertising, :pension, :emp_ben, :other_deductions)
    end
     
     def load_user

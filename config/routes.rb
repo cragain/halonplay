@@ -2,11 +2,14 @@ Rails.application.routes.draw do
  
   
   
+ 
+
  devise_for :users
 
  
  resources :users do
    resources :businesses
+   resources :tax_returns
  end
  
  resources :connect do

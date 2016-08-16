@@ -1,0 +1,65 @@
+
+<div class="content-div"> 
+  <h3 class="text-center">Federal Tax Return Summary</h3>
+  <hr>
+  <h5 class="text-center">Tax Year 2016</h5>
+  <div class="panel panel-default">
+    <div class="panel-heading">Income</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Account Name</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gross Revenue</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).gross_receipts) %></td>
+        </tr>
+        <tr>
+          <td>Returns & Allowances</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).returns) %></td>
+        </tr>
+        <tr>
+          <td>Balance</td>
+          <% bal = (Business.find(@tax_return.business_id).gross_receipts) - (Business.find(@tax_return.business_id).returns) %>
+          <td><%= number_to_currency(bal) %></td>
+        </tr>
+        <tr>
+          <td>Cost Of Goods Sold</td>
+          <% cogs = (Business.find(@tax_return.business_id).cost_goods) %>
+          <td><%= number_to_currency(cogs) %></td>
+        </tr>
+        <tr>
+          <td>Other Income</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).other_income) %></td>
+        </tr>
+        <tr>
+          <td><strong>Total Income</strong></td>
+          <td><strong><%= number_to_currency(bal - cogs + (Business.find(@tax_return.business_id).other_income)) %> </strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 

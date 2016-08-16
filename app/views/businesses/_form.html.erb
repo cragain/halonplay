@@ -1,29 +1,110 @@
-<%= simple_form_for [@user, @business] do |f| %>
-  <%= f.error_notification %>
-  <div class="content-div">
-    <div class="form-inputs">
-      <%= f.input :business_name %>
-      <%= f.input :business_start %>
-      <%= f.input :business_street_1 %>
-      <%= f.input :business_street_2 %>
-      <%= f.input :business_city %>
-      <%= f.input :business_state %>
-      <%= f.input :business_zip %>
-      <%= f.input :ein %>
-      <%= f.input :biz_type %>
-      <%= f.input :bac %>
-      <%= f.input :method %>
-      <%= f.input :activity %>
-      <%= f.input :product %>
-      <%= f.input :schb3 %>
-      <%= f.input :schb4a %>
-      <%= f.input :schb4b %>
-      <%= f.input :schb10a %>
-      <%= f.input :schb10b %>
-    </div>
+<div>
+<!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a data-target="#contact" aria-controls="contact" role="tab" data-toggle="tab">Contact Information</a></li>
+    <li role="presentation"><a data-target="#profile" aria-controls="profile" role="tab" data-toggle="tab">Business Settings</a></li>
+    <li role="presentation"><a data-target="#messages" aria-controls="messages" role="tab" data-toggle="tab">Income</a></li>
+    <li role="presentation"><a data-target="#settings" aria-controls="settings" role="tab" data-toggle="tab">Deductions</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="contact">
+      <%= simple_form_for [@user, @business] do |f| %>
+      <%= f.error_notification %>
+      <div class="content-div">
+        <div class="form-inputs">
+          <%= f.input :business_name %>
+          <%= f.input :business_start %>
+          <%= f.input :business_street_1 %>
+          <%= f.input :business_street_2 %>
+          <%= f.input :business_city %>
+          <%= f.input :business_state %>
+          <%= f.input :business_zip %>
+          <%= f.input :ein %>
+          <%= f.input :biz_type %>
+          
+        </div>
   
-    <div class="form-actions">
-      <%= f.button :submit %>
+        <div class="form-actions" class: "btn btn-primary">
+        <%= f.button :submit, 'Save', :class => "btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <%= simple_form_for [@user, @business] do |f| %>
+      <%= f.error_notification %>
+      <div class="content-div">
+        <div class="form-inputs">
+          <%= f.input :bac %>
+          <%= f.input :method %>
+          <%= f.input :activity %>
+          <%= f.input :product %>
+          <%= f.input :schb3 %>
+          <%= f.input :schb4a %>
+          <%= f.input :schb4b %>
+          <%= f.input :schb10a %>
+          <%= f.input :schb10b %>
+        </div>
+  
+        <div class="form-actions" class: "btn btn-primary">
+        <%= f.button :submit, 'Save', :class => "btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+      <%= simple_form_for [@user, @business] do |f| %>
+      <%= f.error_notification %>
+      <div class="content-div">
+        <div class="form-inputs">
+          <%= f.input :gross_receipts %>
+          <%= f.input :returns %>
+          <%= f.input :cost_goods %>
+          <%= f.input :other_income %>
+          
+        </div>
+  
+        <div class="form-actions" class: "btn btn-primary">
+        <%= f.button :submit, 'Save', :class => "btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">
+      <%= simple_form_for [@user, @business] do |f| %>
+      <%= f.error_notification %>
+      <div class="content-div">
+        <div class="form-inputs">
+          <%= f.input :off_comp %>
+          <%= f.input :salaries %>
+          <%= f.input :repairs %>
+          <%= f.input :bad_debt %>
+          <%= f.input :rents %>
+          <%= f.input :taxes %>
+          <%= f.input :interest %>
+          <%= f.input :depreciation %>
+          <%= f.input :advertising %>
+          <%= f.input :pension %>
+          <%= f.input :emp_ben %>
+          <%= f.input :other_deductions %>
+        </div>
+  
+        <div class="form-actions" class: "btn btn-primary">
+        <%= f.button :submit, 'Save', :class => "btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+
+</div>
+
+
+
+
+
+<div>
+
+  

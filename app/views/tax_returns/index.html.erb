@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="content-div">
+    <div class="well well-sm">
+      <h2 class="text-center">Tax Returns</h2>
+    </div>
+    <%= link_to 'New Return', new_user_tax_return_path(current_user), class: "btn btn-default pull-right" %>
+  </div>
+</div>
+
+
+<div class="content-div">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Return Name</th>
+        <th>Return ID</th>
+        <th>Business ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tax_returns.each do |taxrtn| %>
+      <tr>
+        <td><%= link_to Business.find(taxrtn.business_id).business_name, user_tax_return_path(@user, taxrtn.id)  %> </td>
+        <td><%= taxrtn.id %></td>
+        <td><%= taxrtn.business_id %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
