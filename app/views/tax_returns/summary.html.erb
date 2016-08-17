@@ -1,0 +1,122 @@
+<div class="content-div"> 
+  <%= link_to "Return Data Entry", edit_user_business_path(current_user, @tax_return.business_id), class: "btn btn-default" %>
+  <h3 class="text-center"><%= Business.find(@tax_return.business_id).business_name %></h3>
+  <h3 class="text-center">Federal Tax Return Summary</h3>
+  <hr>
+  <h5 class="text-center">Tax Year 2016</h5>
+  <div class="panel panel-default">
+    <div class="panel-heading">Income</div>
+    <table class="table">
+      <colgroup>
+        <col class="col-md-4">
+        <col class="col-md-2">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Account Name</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gross Revenue</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).gross_receipts) %></td>
+        </tr>
+        <tr>
+          <td>Returns & Allowances</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).returns) %></td>
+        </tr>
+        <tr>
+          <td>Balance</td>
+          <% bal = (Business.find(@tax_return.business_id).gross_receipts) - (Business.find(@tax_return.business_id).returns) %>
+          <td><%= number_to_currency(bal) %></td>
+        </tr>
+        <tr>
+          <td>Cost Of Goods Sold</td>
+          <% cogs = (Business.find(@tax_return.business_id).cost_goods) %>
+          <td><%= number_to_currency(cogs) %></td>
+        </tr>
+        <tr>
+          <td>Other Income</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).other_income) %></td>
+        </tr>
+        <tr>
+          <td><strong>Total Income</strong></td>
+          <td><strong><%= number_to_currency(bal - cogs + (Business.find(@tax_return.business_id).other_income)) %> </strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Deductions Section -->
+  <div class="panel panel-default">
+    <div class="panel-heading">Deductions</div>
+    <table class="table">
+       <colgroup>
+        <col class="col-md-4">
+        <col class="col-md-2">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Account Name</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Compensation of Officers</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).off_comp) %></td>
+        </tr>
+        <tr>
+          <td>Salaries & Wages</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).salaries) %></td>
+        </tr>
+        <tr>
+          <td>Repairs & Maintenance</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).repairs) %></td>
+        </tr>
+        <tr>
+          <td>Bad Debts</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).bad_debt) %></td>
+        </tr>
+        <tr>
+          <td>Rents</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).rents) %></td>
+        </tr>
+        <tr>
+          <td>Taxes and Licenses</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).taxes) %></td>
+        </tr>
+        <tr>
+          <td>Interest</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).interest) %></td>
+        </tr>
+        <tr>
+          <td>Depreciation</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).depreciation) %></td>
+        </tr>
+        <tr>
+          <td>Advertising</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).advertising) %></td>
+        </tr>
+        <tr>
+          <td>Pension & Profit Sharing</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).pension) %></td>
+        </tr>
+        <tr>
+          <td>Employee Benefit Programs</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).emp_ben) %></td>
+        </tr>
+        <tr>
+          <td>Other Deductions</td>
+          <td><%= number_to_currency(Business.find(@tax_return.business_id).other_deductions) %></td>
+        </tr>
+        <tr>
+          <td><strong>Total Deductions</strong></td>
+          <td><strong><%= number_to_currency(bal - cogs + (Business.find(@tax_return.business_id).other_income)) %> </strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>  
+  

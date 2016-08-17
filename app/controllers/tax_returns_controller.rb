@@ -12,6 +12,8 @@ class TaxReturnsController < ApplicationController
 
   def show
     @tax_return = @user.tax_returns.find(params[:id])
+    render :layout => "return"
+    
   end
   
   def new

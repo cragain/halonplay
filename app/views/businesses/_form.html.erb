@@ -15,14 +15,14 @@
       <div class="content-div">
         <div class="form-inputs">
           <%= f.input :business_name %>
-          <%= f.input :business_start %>
+          <%= f.input :business_start, label: "Business Start Date", :order => [:month, :day, :year] %>
           <%= f.input :business_street_1 %>
           <%= f.input :business_street_2 %>
           <%= f.input :business_city %>
-          <%= f.input :business_state %>
-          <%= f.input :business_zip %>
-          <%= f.input :ein %>
-          <%= f.input :biz_type %>
+          <%= f.input :business_state, label: "State", :input_html => {:maxlength =>2, :style=> 'width: 60px'} %>
+          <%= f.input :business_zip, label: "Zip Code", :input_html => {:maxlength =>5, :style=> 'width: 120px'} %>
+          <%= f.input :ein, label: "EIN" %>
+          <%= f.input :biz_type, label: "Business Type", collection: ['S-corp', 'Partnership'] %>
           
         </div>
   
@@ -37,11 +37,11 @@
       <%= f.error_notification %>
       <div class="content-div">
         <div class="form-inputs">
-          <%= f.input :bac %>
-          <%= f.input :method %>
-          <%= f.input :activity %>
-          <%= f.input :product %>
-          <%= f.input :schb3 %>
+          <%= f.input :bac, label: "Business Activity Code", :input_html => {:maxlength =>5, :style=> 'width: 120px'} %>
+          <%= f.input :method, label: "Accounting Method", collection: ['Cash Basis', 'Accrual Basis'], :input_html => {:style=> 'width: 220px'} %>
+          <%= f.input :activity, label: "Business Activity" %>
+          <%= f.input :product, label: "Business Product" %>
+          <%= f.input :schb3, label: "Any shareholder a disregarded entity, estate, or trust?", collection: ['Yes', 'No'], :input_html => {:style=> 'width: 220px'} %>
           <%= f.input :schb4a %>
           <%= f.input :schb4b %>
           <%= f.input :schb10a %>
@@ -59,10 +59,10 @@
       <%= f.error_notification %>
       <div class="content-div">
         <div class="form-inputs">
-          <%= f.input :gross_receipts %>
-          <%= f.input :returns %>
-          <%= f.input :cost_goods %>
-          <%= f.input :other_income %>
+          <%= f.input :gross_receipts, label: "Gross Receipts or Sales", :input_html => {:style=> 'width: 220px'} %>
+          <%= f.input :returns, :input_html => {:style=> 'width: 220px'} %>
+          <%= f.input :cost_goods, label: "Cost of Goods Sold:", :input_html => {:style=> 'width: 220px'} %>
+          <%= f.input :other_income, label: "Other Income", :input_html => {:style=> 'width: 220px'} %>
           
         </div>
   
