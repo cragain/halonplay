@@ -23,6 +23,7 @@ a, a:hover, a:focus{
 	margin-right: auto;
 	overflow: hidden;
 	color: #000000;
+	position: relative;
 }
 .text-center{
 	text-align: center;
@@ -146,7 +147,6 @@ hr{
 }
 .w-46{
 	width: 46%;
-	
 }
 .pull-right{
 	float: right;
@@ -304,7 +304,7 @@ table p{
 .list-input li .line-div{
 	font-weight: 400;
     height: 20px;
-    line-height: 19px;
+    line-height: 25px;
     padding-right: 140px;
     position: relative;
 }
@@ -336,6 +336,8 @@ table p{
 	border-bottom:1px solid #000 !important;
 	border-collapse: collapse;
 	box-sizing: border-box;
+	background: #f1f4ff;
+	height: 20px;
 }
 .right-section .shortinput{
 	border-right:1px solid #000 !important;
@@ -343,9 +345,11 @@ table p{
 .shortinput{
 	width: 30px;
 	float: left;
-	border-left:0px solid #000 !important;
+	border-left:1px solid #000 !important;
 	border-bottom:1px solid #000 !important;
 	border-collapse: collapse;
+	height: 20px;
+	background: #f1f4ff;
 	box-sizing: border-box;
 }
 .right-section{
@@ -501,6 +505,32 @@ input.date{
 .incomeloss{
 	height: 300px;
 }
+.otherinfo{
+	height: 80px;
+}
+.last-divtop{
+	height: 57px;
+}
+.m2table .forcalender{
+	font-size: 11px;
+	line-height: 20px;
+	padding-left: 100px;
+}
+.last-divtop .divname{
+	width: 57px;
+	word-break: break-all;
+    hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+}
+.normal-font{
+	font-weight: 400;
+	display: block;
+	margin-top: 25px;
+}
+.otherinfo .divname{
+	width: 80px;
+}
 .schedulek  .divname{
 	font-size: 12px;
 	padding-top: 18px;
@@ -588,6 +618,321 @@ input.date{
 	box-sizing: border-box;
 	float: left;
 }
+/*hpageinfo*/
+.hpageinfo{
+	padding: 5px 0 0px;
+	line-height: 14px;
+}
+.hpageinfo span{
+	font-size: 14px;
+	font-weight: 700;
+}
+/*sheduleb*/
+.sheduleb{
+	min-height: 20px;
+	position: relative;
+	line-height: 20px;
+}
+.yes-div, .no-div{
+	width: 50%;
+	position: absolute;
+	border-right: 1px solid #000000;
+	box-sizing: border-box;
+	right: 0px;
+	text-align: center;
+	height: 100%;
+}
+.yes-div > span , .no-div >span{
+	height: 20px;
+	border-bottom: 1px solid #000000;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	font-weight: 900;
+	font-size: 12px;
+	padding-top: 1px;
+	background: #ffffff;
+}
+.yes-div{
+	left: 0px;
+	right: unset;
+	border-left: 1px solid #000000;
+}
+.no-div{
+	right: 0px;
+}
+.sheduleb-right{
+	position: absolute;
+	right: 0px;
+	z-index: 100;
+	width: 62px;
+	height: 100%;
+	top: 0px;
+	background: #C0C0C0;
+}
+.sheduleb-left{
+	position: relative;
+	z-index: 10000;
+	min-height: 30px;
+}
+.sheduleline{
+	position: relative;
+	padding-right: 65px;
+	font-weight: 400;
+}
+.box-file{
+	height: 20px;
+	width: 80px; 
+	background: #f1f4ff;
+	display: inline-block;
+	vertical-align: middle;
+}
+.space-20{
+	width: 20px;
+	display: inline-block;
+}
+.space-10{
+	width: 10px;
+	display: inline-block;
+}
+.space-5{
+	width: 5px;
+	display: inline-block;
+}
+.space-30{
+	width: 30px;
+	display: inline-block;
+}
+.box-b{
+	display: block;
+}
+.box-250{
+	width: 250px;
+}
+.box-300{
+	width: 300px;
+}
+.box-400{
+	width: 400px;
+}
+.box-100{
+	width: 100px;
+}
+.box-150{
+	width: 150px;
+}
+.box-160{
+	width: 160px;
+}
+.box-30{
+	width: 30px;
+}
+.box-200{
+	width: 200px;
+}
+.binline{
+	display: inline-block !important;
+}
+.fullb.box-file{
+	width: 100%;
+	display: block;
+}
+.sheduleb-list > li{
+	padding-left: 35px;
+    position: relative;
+    font-weight: 900;
+}
+.sheduleb-list .numbli{
+	position: absolute;
+	left: 0px;
+	font-weight: 900;
+	top: 0px;
+}
+.dottedline:after{
+	display: inline-block;
+	width: 0;
+    white-space: nowrap;
+    vertical-align: bottom;
+    position: relative;
+    content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+}
+.ftable{
+	width: 100%;
+	background: #ffffff;
+	z-index: 1000;
+	position: relative;
+	border-bottom: 1px solid #000000;
+}
+.ftable > tbody > tr > td{
+	font-size: 11px;
+	font-weight: 400;
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	text-align: center;
+	line-height: 15px;
+}
+.ftable > tbody > tr > td:first-child{
+	border-left: 0px;
+}
+.marg-68{
+	margin-right: 68px;
+	padding-right: 0px;
+}
+.right-230{
+	float: right;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	padding:  0 5px;
+	background: #ffffff;
+}
+.sheduleb-list li ul li{
+	list-style: lower-alpha;
+}
+.check-input{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	height: 20px;
+	display: inline-block;
+	width: 62px;
+	background: #ffffff;
+	border:1px solid #000000;
+	box-sizing: border-box;
+}
+.check-input > div{
+	float: left;
+	height: 20px;
+	width: 50%;
+	box-sizing: border-box;
+	text-align: center;
+}
+.check-input > div input[type="checkbox"]{
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+}
+.check-input > div:first-child{
+	border-right: 1px solid #000000;
+}
+.schedulem1 {
+	position: relative;
+	padding-left: 115px;
+}
+.schedulem1 .Schedulename {
+	position: absolute;
+	left: 0px;
+	max-width: 115px;
+	top: 0px;
+}
+.halfdiv{
+	position: relative;
+	float: left;
+	box-sizing: border-box;
+	width: 50%;
+	padding-left: 3px;
+	height: 226px;
+	overflow: hidden;
+}
+.shedulem-s{
+	font-weight: 400 !important;
+	min-height: 20px;
+}
+.font-10{
+	font-size: 10px !important;
+}
+.shedulem1-content .sheduleb-list{
+	margin-right: 101px;
+	border-right: 1px solid #000;
+	line-height: 20px;
+}
+.shedulem-s{
+	position: relative;
+}
+.box-right{
+	position: absolute;
+    right: -102px;
+    bottom: 0px;
+    height: 20px;
+    width: 101px;
+}
+.shedulem-s .box-file{
+	border-bottom: 1px dashed #000000;
+} 
+.box-right .box-file{
+	box-sizing: border-box;
+	border-bottom: 1px solid #000;
+
+}
+.m2table > tbody > tr > td{
+	text-align: center;
+	border-width: 1px 0 1px 1px;
+	border-color: #000000;
+	border-style: solid;
+	position: relative;z-index: 10000;
+	background: #C0C0C0;
+}
+.tablef4 > tbody > tr > td{
+	padding: 0px !important;
+	line-height: 20px;
+}
+.tablef4 > tbody > tr:first-child > td{
+	border-top: 0px !important
+}
+.m2table > tbody > tr > td:first-child{
+	width: 267px;
+	border: 0px;
+	text-align: left;
+	background: #ffffff;
+	padding: 0px 10px !important;
+} 
+.tablef4 > tbody > tr > td:first-child{
+	width: 300px;
+}
+.m2table.tablef4 > tbody > tr > td:first-child{
+	padding: 0px !important;
+}
+.m2table > tbody > tr > td:first-child .space-25{
+	font-weight: 900;
+	text-align: center;
+}
+.m2table > tbody > tr:first-child > td{
+	padding: 10px;
+	background: #ffffff;
+}
+.m2table > tbody > tr:last-child > td:first-child{
+	font-size: 10px;
+}
+.after-before{
+	position: relative;
+	box-sizing: border-box;
+	padding: 0 4px;
+}
+.after-before::after{
+	content: ')';
+	position: absolute;
+	right: 4px;
+	font-size: 12px;
+	line-height: 20px;
+	top: 0px;
+	color: #000000;
+}
+.after-before::before{
+	content: '(';
+	position: absolute;
+	left: 4px;
+	font-size: 12px;
+	line-height: 20px;
+	top: 0px;
+	color: #000000;
+}
+.space-25{
+	width: 25px;
+	display: inline-block;
+}
+.tablef4 > tbody > tr:last-child > td:first-child{
+	font-size: 11px; 
+}
 
  h5 {
 	font-size: 12px;
@@ -604,4 +949,47 @@ input.date{
 	color: blue;
 	text-align: center;
 	
+}
+
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    font-family: Arial;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tablef4 > tbody > tr > td{
+ width: 117px;
 }
