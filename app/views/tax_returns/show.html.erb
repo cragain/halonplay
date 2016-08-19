@@ -43,7 +43,7 @@
 					<tr>
 						<td class="bdr-right">
 							<p><strong>A</strong> S election effective date </p>
-							<input type="text" class="input-full">
+							<div class="input-full text-center"><h5><%= (Business.find(@tax_return.business_id).business_start).strftime("%m/%d/%Y") %></h5></div>
 							<hr>
 							<p><strong>B</strong> Business activity code<br>number (see instructions) </p>
 							<input type="text" class="input-full">
@@ -58,17 +58,17 @@
 							<div class="input-full"><h5><%= Business.find(@tax_return.business_id).business_name %></h5></div>
 							<hr>
 							<p>Number, street, and room or suite no. If a P.O. box, see instructions. </p>
-							<input type="text" class="input-full">
+							<div class="input-full"><h5><%= Business.find(@tax_return.business_id).business_street_1 %>&nbspSte:&nbsp<%= Business.find(@tax_return.business_id).business_street_2 %></h5></div>
 							<hr>
 							<p>City or town, state or province, country, and ZIP or foreign postal code</p>
-							<input type="text" class="input-full">
+							<div class="input-full"><h5><%= Business.find(@tax_return.business_id).business_city %>,&nbsp<%= @tax_return.current_business.business_state %>&nbsp&nbsp<%= @tax_return.current_business.business_zip %></h5></div>
 						</td>
 						<td>
 							<p><strong>D</strong> Employer identification number </p>
-							<input type="text" class="input-full">
+							<div class="input-full text-center"><h5><%= Business.find(@tax_return.business_id).ein %></h5></div>
 							<hr>
 							<p><strong>E</strong> Date incorporated </p>
-							<input type="text" class="input-full">
+							<div class="input-full text-center"><h5><%= (Business.find(@tax_return.business_id).business_start).strftime("%m/%d/%Y") %></h5></div>
 							<hr>
 							<p><strong>F</strong> Total assets (see instructions)</p>
 							<p class="dollor-div clearfix">
@@ -129,7 +129,7 @@
 										<span class="numbering">
 											1b
 										</span>
-										<input type="text" class="longinput">
+										<div class="longinput"><h6><%= number_to_currency(@tax_return.current_business.returns) %></h6></div>
 										<input type="text" class="shortinput">
 									</div>
 									<div class="right-section">
