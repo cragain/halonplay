@@ -2,6 +2,7 @@
   <div class="well well-sm">
     <h2 class="text-center"><%= Business.find(@tax_return.business_id).business_name %> Tax Return</h2>
   </div>
-  <%= link_to 'S-corp Return', user_tax_return_s_corp_show_path(current_user, @tax_return), class: "btn btn-default" %>
+  <%= link_to 'S-corp Return', user_tax_return_s_corp_show_path(current_user, @tax_return), method: :get, class: "btn btn-default" %>
+  <%= link_to 'S-corp K-1', user_tax_return_s_corp_k1_show_path(current_user, @tax_return), method: :get, class: "btn btn-default" %>
 </div>
 

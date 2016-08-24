@@ -15,7 +15,7 @@ Rails.application.routes.draw do
    resources :businesses
    resources :tax_returns do
      get 'user_interview/show'
-     get 's_corp_k_1/show'
+     get 's_corp_k1/show'
      get 's_corp/show'
    end
  end
