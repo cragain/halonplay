@@ -1,10 +1,11 @@
 <div>
 <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a data-target="#contact" aria-controls="contact" role="tab" data-toggle="tab">Contact Information</a></li>
-    <li role="presentation"><a data-target="#profile" aria-controls="profile" role="tab" data-toggle="tab">Business Settings</a></li>
-    <li role="presentation"><a data-target="#messages" aria-controls="messages" role="tab" data-toggle="tab">Income</a></li>
-    <li role="presentation"><a data-target="#settings" aria-controls="settings" role="tab" data-toggle="tab">Deductions</a></li>
+    <li role="presentation" class="active"><a href="#" data-target="#contact" aria-controls="contact" role="tab" data-toggle="tab">Contact Information</a></li>
+    <li role="presentation"><a href="#" data-target="#profile" aria-controls="profile" role="tab" data-toggle="tab">Business Settings</a></li>
+    <li role="presentation"><a href="#" data-target="#messages" aria-controls="messages" role="tab" data-toggle="tab">Income</a></li>
+    <li role="presentation"><a href="#" data-target="#settings" aria-controls="settings" role="tab" data-toggle="tab">Deductions</a></li>
+     <li role="presentation"><a href="#" data-target="#other_exp" aria-controls="other_exp" role="tab" data-toggle="tab">Other Deductions</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -14,16 +15,20 @@
       <%= f.error_notification %>
       <div class="content-div">
         <div class="form-inputs">
+          
           <%= f.input :business_name %>
-          <%= f.input :business_start, label: "Business Start Date", :order => [:month, :day, :year] %>
+          <div class="col-md-6">
           <%= f.input :business_street_1 %>
-          <%= f.input :business_street_2 %>
           <%= f.input :business_city %>
           <%= f.input :business_state, label: "State", :input_html => {:maxlength =>2, :style=> 'width: 60px'} %>
           <%= f.input :business_zip, label: "Zip Code", :input_html => {:maxlength =>5, :style=> 'width: 120px'} %>
-          <%= f.input :ein, label: "EIN" %>
+          </div>
+          <div class="col-md-6">
+          <%= f.input :business_street_2 %>
+          <%= f.input :ein, label: "EIN" %>  
+          <%= f.input :business_start, label: "Business Start Date", :order => [:month, :day, :year] %>
           <%= f.input :biz_type, label: "Business Type", collection: ['S-corp', 'Partnership'] %>
-          
+          </div>
         </div>
   
         <div class="form-actions" class: "btn btn-primary">
@@ -37,15 +42,21 @@
       <%= f.error_notification %>
       <div class="content-div">
         <div class="form-inputs">
-          <%= f.input :bac, label: "Business Activity Code", :input_html => {:maxlength =>5, :style=> 'width: 120px'} %>
-          <%= f.input :method, label: "Accounting Method", collection: ['Cash Basis', 'Accrual Basis'], :input_html => {:style=> 'width: 220px'} %>
-          <%= f.input :activity, label: "Business Activity" %>
-          <%= f.input :product, label: "Business Product" %>
-          <%= f.input :schb3, label: "Any shareholder a disregarded entity, estate, or trust?", collection: ['Yes', 'No'], :input_html => {:style=> 'width: 220px'} %>
-          <%= f.input :schb4a %>
-          <%= f.input :schb4b %>
-          <%= f.input :schb10a %>
-          <%= f.input :schb10b %>
+          <div class="row">
+            <div class="col-md-6">
+            <%= f.input :bac, label: "Business Activity Code", :input_html => {:maxlength =>5, :style=> 'width: 120px'} %>
+            <%= f.input :method, label: "Accounting Method", collection: ['Cash Basis', 'Accrual Basis'], :input_html => {:style=> 'width: 220px'} %>
+            <%= f.input :activity, label: "Business Activity" %>
+            <%= f.input :product, label: "Business Product" %>
+            <%= f.input :schb3, label: "Any shareholder a disregarded entity, estate, or trust?", collection: ['Yes', 'No'], :input_html => {:style=> 'width: 220px'} %>
+            </div>
+            <div class="col-md-6">
+            <%= f.input :schb4a, label: "Does the business directly own 20% or more of the stock of any corporation?", collection: ['Yes', 'No'], :input_html => {:style=> 'width: 220px'} %>
+            <%= f.input :schb4b, label: "Does the business directly own 20% or more of the stock of any partnership?", collection: ['Yes', 'No'], :input_html => {:style=> 'width: 220px'} %>
+            <%= f.input :schb10a, label: "Were total receipts less than $250,000 for the year?", collection: ['Yes', 'No'], :input_html => {:style=> 'width: 220px'} %>
+            <%= f.input :schb10b, label: "Were total assets less than $250,000 for the year?", collection: ['Yes', 'No'], :input_html => {:style=> 'width: 220px'} %>
+            </div>
+          </div>  
         </div>
   
         <div class="form-actions" class: "btn btn-primary">
@@ -97,6 +108,70 @@
       </div>
       <% end %>
     </div>
+     <div role="tabpanel" class="tab-pane" id="other_exp">
+      <%= simple_form_for [@user, @business] do |f| %>
+      <%= f.error_notification %>
+      <div class="content-div">
+        <div class="form-inputs">
+          
+          <div class="col-md-4">
+          <%= f.input :accounting %>
+          <%= f.input :auto %>
+          <%= f.input :bank_charge %>
+          <%= f.input :cell_phone %>
+          <%= f.input :commissions %>
+          <%= f.input :computer %>
+          <%= f.input :consulting %>
+          <%= f.input :credit_costs %>
+          <%= f.input :delivery %>
+          <%= f.input :dues %>
+          <%= f.input :education %>
+          <%= f.input :fuel %>
+          <%= f.input :gifts %>
+          </div>
+          <div class="col-md-4">
+          <%= f.input :ind_contractor %>
+          <%= f.input :insurance %>
+          <%= f.input :internet %>
+          <%= f.input :janitorial %>
+          <%= f.input :legal_professional %>
+          <%= f.input :marketing %>
+          <%= f.input :meals50 %>
+          <%= f.input :misc %>
+          <%= f.input :office %>
+          <%= f.input :parking %>
+          <%= f.input :payroll_process %>
+          <%= f.input :permits %>
+          <%= f.input :postage %>
+          </div>
+          <div class="col-md-4">
+          <%= f.input :printing %>
+          <%= f.input :software %>
+          <%= f.input :supplies %>
+          <%= f.input :telephone %>
+          <%= f.input :tools %>
+          <%= f.input :travel %>
+          <%= f.input :utilities %>
+          <%= f.input :waste_removal %>
+          <%= f.input :other1 %>
+          <%= f.input :other2 %>
+          <%= f.input :other3 %>
+          <%= f.input :other4 %>
+          <%= f.input :other5 %>
+          <%= f.input :other6 %>
+          </div>
+        </div>
+  
+        <div class="form-actions" class: "btn btn-primary">
+        <%= f.button :submit, 'Save', :class => "btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    
+    
+    
+    
   </div>
 
 </div>

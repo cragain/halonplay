@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
+@import url(//fonts.googleapis.com/css?family=Ubuntu:400,500);
 
 *{
 	padding:0;
@@ -47,32 +47,11 @@ p{
 	text-align: center;
 }
 
-.typed-cursor{
-    opacity: 1;
-    display: inline-block;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
+
 
 .Halon-box {
 	border: 1px solid #d3d3d3;
-	margin: 200px;
+	margin: 140px;
 	padding-top: 100px;
 	padding-bottom: 100px;
 	border-radius: 5px;

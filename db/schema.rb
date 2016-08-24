@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815215923) do
+ActiveRecord::Schema.define(version: 20160823231504) do
 
   create_table "business_summaries", force: :cascade do |t|
     t.datetime "created_at",     null: false
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20160815215923) do
   end
 
   create_table "businesses", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "business_name"
     t.date     "business_start"
     t.string   "business_street_1"
@@ -59,6 +59,46 @@ ActiveRecord::Schema.define(version: 20160815215923) do
     t.integer  "pension"
     t.integer  "emp_ben"
     t.integer  "other_deductions"
+    t.integer  "accounting"
+    t.integer  "auto"
+    t.integer  "bank_charge"
+    t.integer  "cell_phone"
+    t.integer  "commissions"
+    t.integer  "computer"
+    t.integer  "consulting"
+    t.integer  "credit_costs"
+    t.integer  "delivery"
+    t.integer  "dues"
+    t.integer  "education"
+    t.integer  "fuel"
+    t.integer  "gifts"
+    t.integer  "ind_contractor"
+    t.integer  "insurance"
+    t.integer  "internet"
+    t.integer  "janitorial"
+    t.integer  "legal_professional"
+    t.integer  "marketing"
+    t.integer  "meals50"
+    t.integer  "misc"
+    t.integer  "office"
+    t.integer  "parking"
+    t.integer  "payroll_process"
+    t.integer  "permits"
+    t.integer  "postage"
+    t.integer  "printing"
+    t.integer  "software"
+    t.integer  "supplies"
+    t.integer  "telephone"
+    t.integer  "tools"
+    t.integer  "travel"
+    t.integer  "utilities"
+    t.integer  "waste_removal"
+    t.integer  "other1"
+    t.integer  "other2"
+    t.integer  "other3"
+    t.integer  "other4"
+    t.integer  "other5"
+    t.integer  "other6"
   end
 
   create_table "tax_returns", force: :cascade do |t|

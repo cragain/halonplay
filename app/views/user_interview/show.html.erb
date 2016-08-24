@@ -3,18 +3,86 @@
 <script>
   $(function(){
       jQuery(".ragain").typed({
-        strings: ["Hello....", "My name is Halon.....", "I am an artificial intelligence system, designed for proficiency in taxation and planning....", "I will be your guide today.  May I ask your name?"],
-        typeSpeed: 100,
-        startDelay: 750,
-        backDelay: 2750
+        strings: ["Initiating System Interface.....", "Loading IRC Code 26...", "System running at 100% on Node 7.... Wake Halon.....", "Halon Artificial Intelligence System Online..."],
+        typeSpeed: 60,
+        startDelay: 50,
+        backDelay: 750,
+        cursorChar: "",
       });
   });
+  
+  setTimeout(function(){
+        $(".element0").typed({
+            strings: ["Hello....  My name is Halon....."],
+            typeSpeed: 30, // typing speed
+            backDelay: 750, // pause before backspacing
+            loop: false, // loop on or off (true or false)
+            loopCount: false, // number of loops, false = infinite
+            cursorChar: "",
+            callback: function(){ } // call function after typing is done
+        });
+    }, 26000);
+    
+    setTimeout(function(){
+        $(".element1").css("display", "inherit");
+        $(".element1").typed({
+            strings: ["I am an artificial intelligence system, designed for proficiency in taxation and planning...."],
+            typeSpeed: 100, // typing speed
+            backDelay: 750, // pause before backspacing
+            loop: false, // loop on or off (true or false)
+            loopCount: false, // number of loops, false = infinite
+            cursorChar: "",
+            callback: function(){ } // call function after typing is done
+        });
+    }, 31000);
+    
+setTimeout(function(){
+        $(".element2").css("display", "inherit");
+        $(".element2").typed({
+            strings: ["I will be your guide today.  May I ask your name?"],
+            typeSpeed: 30, // typing speed
+            backDelay: 750, // pause before backspacing
+            loop: false, // loop on or off (true or false)
+            loopCount: false, // number of loops, false = infinite
+            cursorChar: "",
+            callback: function(){ } // call function after typing is done
+        });
+    }, 46000);
+
+setTimeout(function(){
+        $(".element3").css("display", "inherit");
+        $(".element3").typed({
+            strings: ["chmod 700 /world"],
+            typeSpeed: 30, // typing speed
+            backDelay: 750, // pause before backspacing
+            loop: false, // loop on or off (true or false)
+            loopCount: false, // number of loops, false = infinite
+            callback: function(){ } // call function after typing is done
+        });
+    }, 6000);
+
+setTimeout(function(){
+        $(".element4").css("display", "inherit");
+        $(".element4").typed({
+            strings: ["chown parents /world/australia"],
+            typeSpeed: 30, // typing speed
+            backDelay: 750, // pause before backspacing
+            loop: false, // loop on or off (true or false)
+            loopCount: false, // number of loops, false = infinite
+            callback: function(){ } // call function after typing is done
+        });
+    }, 8000);    
 </script>
 
 
 <div class="text-center">
   <div class="Halon-box">
-    <h1><span class="ragain"></span></h1>
+    <h1><span class='ragain' ></span></h1>
+    <h1><span class='element0' ></span></h1>
+    <h1><span class='element1' ></span></h1>
+    <h1><span class='element2' ></span></h1>
+    
+    
   </div>
 </div>
 

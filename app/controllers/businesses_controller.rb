@@ -74,7 +74,7 @@ class BusinessesController < ApplicationController
    
     # Never trust parameters from the scary internet, only allow the white list through.
    def business_params
-    params.require(:business).permit(:business_name, :business_start, :business_street_1, :business_street_2, :business_city, :business_state, :business_zip, :ein, :biz_type, :bac, :method, :activity, :product, :schb3, :schb4a, :schb4b, :schb10a, :schb10b, :gross_receipts, :returns, :cost_goods, :other_income, :off_comp, :salaries, :repairs, :bad_debt, :rents, :taxes, :interest, :depreciations, :advertising, :pension, :emp_ben, :other_deductions)
+    params.require(:business).permit(:business_name, :business_start, :business_street_1, :business_street_2, :business_city, :business_state, :business_zip, :ein, :biz_type, :bac, :method, :activity, :product, :schb3, :schb4a, :schb4b, :schb10a, :schb10b, :gross_receipts, :returns, :cost_goods, :other_income, :off_comp, :salaries, :repairs, :bad_debt, :rents, :taxes, :interest, :depreciations, :advertising, :pension, :emp_ben, :other_deductions, :accounting, :auto, :bank_charge, :cell_phone, :commissions, :computer, :consulting, :credit_costs, :delivery, :dues, :education, :fuel, :gifts, :ind_contractor, :insurance, :internet, :janitorial, :legal_professional, :marketing, :meals50, :misc, :office, :parking, :payroll_process, :permits, :postage, :printing, :software, :supplies, :telephone, :tools, :travel, :utilities, :waste_removal, :other1, :other2, :other3, :other4, :other5, :other6)
    end
     
     def load_user

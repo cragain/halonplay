@@ -4,14 +4,20 @@ Rails.application.routes.draw do
   
  
 
-  get 'user_interview/show'
+ 
+
+  
 
  devise_for :users
 
  
  resources :users do
    resources :businesses
-   resources :tax_returns
+   resources :tax_returns do
+     get 'user_interview/show'
+     get 's_corp_k_1/show'
+     get 's_corp/show'
+   end
  end
  
  resources :connect do
